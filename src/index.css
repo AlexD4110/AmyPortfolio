@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define Helvetica Neue Light font */
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url('/fonts/HelveticaNeueLight.woff2') format('woff2'),
+         url('/fonts/HelveticaNeueLight.woff') format('woff'); /* Add other formats if needed */
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Apply Helvetica Neue Light globally */
+body {
+    font-family: 'Helvetica Neue Light', sans-serif;
+}

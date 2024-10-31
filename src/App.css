@@ -1,0 +1,123 @@
+/* Global reset to ensure consistent styling across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define Helvetica Neue Light font with the correct path */
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: url('/src/assets/fonts/HelveticaNeueLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Apply Helvetica Neue Light globally */
+body {
+  font-family: 'Helvetica Neue Light';
+}
+
+/* Style headings with Helvetica Neue */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue Light';
+  margin-bottom: 10px;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h5 {
+  @apply text-lg;
+}
+
+h6 {
+  @apply text-base;
+}
+
+/* Style links */
+a {
+  @apply text-blue-500 no-underline;
+}
+
+a:hover {
+  @apply underline;
+}
+
+/* Apply Helvetica Neue Light font to buttons */
+button {
+  font-family: 'Helvetica Neue Light';
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Apply Helvetica Neue Light font to form inputs */
+input, textarea {
+  font-family: 'Helvetica Neue Light';
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+/* Style paragraphs */
+p {
+  @apply leading-relaxed;
+}
+
+/* Add PDF Viewer specific styles */
+.pdf-viewer {
+  @apply flex flex-col items-center gap-4 p-4 max-w-screen-lg mx-auto;
+  font-family: 'Helvetica Neue Light';
+}
+
+/* Controls container in PDF Viewer */
+.pdf-viewer .controls {
+  @apply flex gap-4 items-center mt-4;
+}
+
+/* Style buttons within PDF Viewer controls */
+.pdf-viewer .controls button {
+  @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed;
+}
+
+/* Style the PDF document container */
+.pdf-viewer .react-pdf__Document {
+  @apply max-w-full overflow-auto;
+}
+
+/* Style the PDF page container */
+.pdf-viewer .react-pdf__Page {
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @apply max-w-full;
+}
+
+/* Style the PDF page canvas */
+.pdf-viewer .react-pdf__Page canvas {
+  @apply max-w-full h-auto;
+}
