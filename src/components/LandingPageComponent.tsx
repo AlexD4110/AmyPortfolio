@@ -7,7 +7,7 @@ import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/comp
 interface PageCardProps {
   title: string;
   description: string;
-  icon: React.ComponentType; // Specify a general type for icon components
+  icon: React.ComponentType<{ className?: string }>; // Specify a general type for icon components
   href: string;
 }
 

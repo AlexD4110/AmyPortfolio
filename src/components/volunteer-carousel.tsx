@@ -1,7 +1,7 @@
 // src/components/VolunteerCarouselComponent.tsx
 
 import * as React from "react";
-import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -15,12 +15,13 @@ type Slide = {
 type CarouselProps = {
   slides: Slide[];
   className?: string;
-  opts?: EmblaOptionsType; // Adding 'opts' to the CarouselProps type
 };
 
-export function VolunteerCarouselComponent({ opts = { loop: true }, slides, className }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(opts);
+export function VolunteerCarouselComponent({ slides, className }: CarouselProps) {
+  // Initialize Embla carousel without custom options
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
+  // Carousel navigation functions
   const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
@@ -46,6 +47,7 @@ export function VolunteerCarouselComponent({ opts = { loop: true }, slides, clas
           ))}
         </div>
       </div>
+      {/* Previous Slide Button */}
       <Button
         variant="outline"
         size="icon"
@@ -55,6 +57,7 @@ export function VolunteerCarouselComponent({ opts = { loop: true }, slides, clas
         <ArrowLeft className="h-4 w-4" />
         <span className="sr-only">Previous slide</span>
       </Button>
+      {/* Next Slide Button */}
       <Button
         variant="outline"
         size="icon"
