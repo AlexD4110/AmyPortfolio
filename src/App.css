@@ -87,37 +87,3 @@ p {
   @apply leading-relaxed;
 }
 
-/* Add PDF Viewer specific styles */
-.pdf-viewer {
-  @apply flex flex-col items-center gap-4 p-4 max-w-screen-lg mx-auto;
-  font-family: 'Helvetica Neue Light';
-}
-
-/* Controls container in PDF Viewer */
-.pdf-viewer .controls {
-  @apply flex gap-4 items-center mt-4;
-}
-
-/* Style buttons within PDF Viewer controls */
-.pdf-viewer .controls button {
-  @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed;
-}
-
-/* Style the PDF document container */
-.pdf-viewer .react-pdf__Document {
-  @apply max-w-full overflow-auto;
-}
-
-/* Style the PDF page container */
-.pdf-viewer .react-pdf__Page {
-  max-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @apply max-w-full;
-}
-
-/* Style the PDF page canvas */
-.pdf-viewer .react-pdf__Page canvas {
-  @apply max-w-full h-auto;
-}

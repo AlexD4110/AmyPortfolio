@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 
 interface Experience {

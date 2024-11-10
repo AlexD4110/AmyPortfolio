@@ -55,7 +55,7 @@ const PageCard = ({ title, description, icon: Icon, href }) => (
   </Card>
 );
 
-const LandingPageComponent: React.FC = () => {
+const LandingPageComponent = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950" style={{ fontFamily: 'Helvetica Neue Light' }}>
       <main className="container mx-auto px-4 py-16">
