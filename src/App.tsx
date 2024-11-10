@@ -14,7 +14,7 @@ import HartfordHospital from './pages/experience/hartford';
 import CVSPharmacy from './pages/experience/cvs';
 import Contact from './pages/Contact';
 import Leadership from './pages/Leadership';
-import Presentations from './pages/Presentations';
+//import Presentations from './pages/Presentations';
 import NflnProgram from './pages/NflnProgram'; 
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/PageTransition"
@@ -39,7 +39,6 @@ const AppRoutes = () => {
         <Route path="/certifications" element={<PageTransition><Certifications /></PageTransition>} />
         <Route path="/volunteer" element={<PageTransition><Volunteer /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-        <Route path="/presentations" element={<PageTransition disableTransition><Presentations /></PageTransition>} />
         <Route path="/leadership" element={<PageTransition><Leadership /></PageTransition>} />
         <Route path="/nfln-program" element={<PageTransition><NflnProgram /></PageTransition>} />
       </Routes>
