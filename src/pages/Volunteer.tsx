@@ -3,7 +3,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VolunteerCarouselComponent from '@/components/volunteer-carousel';
-import { m } from 'framer-motion';
 
 // Carousel slides data
 const slides = [
