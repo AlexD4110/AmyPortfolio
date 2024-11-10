@@ -1,6 +1,5 @@
 // pages/Information.tsx
 import React from 'react';
-import CategoryPageTemplate from '@/components/CategoryPageTemplate';
 import TimelineComponent from '@/components/timeline'; // Adjust the import path as neededsrc/components/timeline.tsx
 
 const Information: React.FC = () => {

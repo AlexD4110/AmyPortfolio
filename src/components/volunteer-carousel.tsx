@@ -1,11 +1,8 @@
 // src/components/VolunteerCarouselComponent.tsx
 
 import * as React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-
-
+import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -18,6 +15,7 @@ type Slide = {
 type CarouselProps = {
   slides: Slide[];
   className?: string;
+  opts?: EmblaOptionsType; // Adding 'opts' to the CarouselProps type
 };
 
 export function VolunteerCarouselComponent({ opts = { loop: true }, slides, className }: CarouselProps) {

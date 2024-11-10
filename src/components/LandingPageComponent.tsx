@@ -1,10 +1,15 @@
-'use client';
-
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, GraduationCap, Briefcase, BadgeCheck, Heart } from 'lucide-react'; 
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+
+// Define the types for PageCard props
+interface PageCardProps {
+  title: string;
+  description: string;
+  icon: React.ComponentType; // Specify a general type for icon components
+  href: string;
+}
 
 const pageLinks = [
   {
@@ -33,7 +38,8 @@ const pageLinks = [
   },
 ];
 
-const PageCard = ({ title, description, icon: Icon, href }) => (
+// Update PageCard component with explicit props types
+const PageCard = ({ title, description, icon: Icon, href }: PageCardProps) => (
   <Card className="group hover:shadow-lg transition-all duration-300" style={{ fontFamily: 'Helvetica Neue Light' }}>
     <CardHeader>
       <Icon className="h-8 w-8 text-neutral-900 mb-2 dark:text-neutral-50" />
@@ -121,3 +127,4 @@ const LandingPageComponent = () => {
 };
 
 export default LandingPageComponent;
+
