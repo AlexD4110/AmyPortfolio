@@ -1,15 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import * as React from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 
 interface Experience {
-  company: string;
-  location: string;
-  position: string;
-  date: string;
-  supervisor: string;
-  responsibilities: string[];
-  image: string;
+  company: string
+  location: string
+  position: string
+  date: string
+  supervisor: string
+  responsibilities: string[]
+  images: string[]
 }
 
 const experiences: Experience[] = [
@@ -26,7 +30,7 @@ const experiences: Experience[] = [
       "Collaborated with the Center for Post Authorization Safety Studies and Clinical Science Teams, fostering cross-functional communication that reduced project turnaround times by 10%",
       "Compiled a detailed list of all prescription and OTC IBS-C/CIC drugs—including manufacturer, drug class, indication, regulatory status—enhancing the team's understanding competitive landscape"
     ],
-    image: "/placeholder.svg?height=200&width=200"
+    images: ["/amy.png", "/dinner.webp", "/viewhigh.webp", "/boss.webp"]
   },
   {
     company: "The Medicine Shoppe",
@@ -38,7 +42,7 @@ const experiences: Experience[] = [
       "Assisted in managing the financial aspects of pharmacy operations, including contributing to oversight a $500,000 annual budget, helping reduce inventory costs by 15%, and streamlining procurement processes save approximately $50,000 annually",
       "Engaged in community outreach and customer service, helping over 1,200 patients contributing to a 10% increase patient retention through personalized care proactive follow-up"
     ],
-    image: "/placeholder.svg?height=200&width=200"
+    images: ["/selfie.webp"]
   },
   {
     company: "Hartford Hospital",
@@ -52,7 +56,7 @@ const experiences: Experience[] = [
       "Undertaking technical pharmaceutical functions related to drug purchasing, receiving, and distribution, demonstrating a holistic understanding of the supply chain",
       "Prepackaging tablets, capsules, and other dosage forms for in-patient dispensing"
     ],
-    image: "/placeholder.svg?height=200&width=200"
+    images: ["/HHC.svg"]
   },
   {
     company: "CVS Pharmacy",
@@ -66,61 +70,127 @@ const experiences: Experience[] = [
       "Inspected drug storage sites, monitored supply expiration dates and ensured proper levels",
       "Maintained a commitment to safety and sanitation by cleaning equipment, work areas, sterilizing glassware"
     ],
-    image: "/placeholder.svg?height=200&width=200"
+    images: ["/tree.webp"]
   }
-];
+]
 
-const TimelineComponent: React.FC = () => {
+function ImageCarousel({ images, company }: { images: string[], company: string }) {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
-    <div className="container mx-auto p-4">
-      <div className="relative flex flex-col items-center">
-        {/* Vertical line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 h-full"></div>
+    <div
+      className={`relative w-full ${
+        company === "Hartford Hospital" ? "h-[30rem]" : "h-[40rem]"
+      } rounded-lg overflow-hidden`}
+    >
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt={`${company} experience`}
+          className="absolute inset-0 w-full h-full"
+          style={{
+            objectFit: company === "Hartford Hospital" ? "contain" : "cover",
+            objectPosition: company === "Hartford Hospital" ? "center" : "center 18%",
+            transform: company === "Hartford Hospital" ? "scale(1.5)" : "scale(1)" // Slightly increase the scale
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        />
+      </AnimatePresence>
+      {images.length > 1 && (
+        <>
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-neutral-950/80 dark:hover:bg-neutral-950"
+            onClick={prevImage}
+          >
+            <ChevronLeftIcon className="h-4 w-4" />
+            <span className="sr-only">Previous image</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-neutral-950/80 dark:hover:bg-neutral-950"
+            onClick={nextImage}
+          >
+            <ChevronRightIcon className="h-4 w-4" />
+            <span className="sr-only">Next image</span>
+          </Button>
+        </>
+      )}
+    </div>
+  );
+}
 
+
+export function Timeline() {
+  return (
+    <div className="container mx-auto p-4 bg-white dark:bg-neutral-950">
+      <h2 className="text-3xl font-bold text-center mb-10">Professional Experience Timeline</h2>
+      <div className="relative">
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary to-primary-foreground h-full rounded-full" />
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className={`flex w-full mb-16 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}
+            className="relative grid grid-cols-[1fr,auto,1fr] gap-8 mb-16"
           >
-            <div className={`relative w-1/2 px-8 ${index % 2 === 0 ? 'text-left' : 'text-left'}`}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>{exp.company}</CardTitle>
+            <div className={`${index % 2 === 0 ? "block" : "order-3"} space-y-4`}>
+              {index % 2 === 0 && <ImageCarousel images={exp.images} company={exp.company} />}
+            </div>
+
+            <div className="relative flex items-center justify-center">
+              <motion.div
+                className="w-8 h-8 rounded-full bg-neutral-900 border-4 border-white shadow-lg dark:bg-neutral-50 dark:border-neutral-950"
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              />
+            </div>
+
+            <div className={`${index % 2 === 0 ? "order-3" : "block"} space-y-4`}>
+              {index % 2 === 1 && <ImageCarousel images={exp.images} company={exp.company} />}
+              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <CardHeader className="bg-neutral-100 dark:bg-neutral-800">
+                  <CardTitle className="text-xl font-semibold">{exp.company}</CardTitle>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    <Badge variant="secondary">{exp.location}</Badge>
+                    <Badge variant="outline">{exp.date}</Badge>
+                  </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-neutral-500 mb-2 dark:text-neutral-400">
-                    {exp.location}
-                  </p>
-                  <p className="font-medium mb-2">{exp.position}</p>
-                  <p className="text-sm text-neutral-500 mb-2 dark:text-neutral-400">
-                    {exp.date}
-                  </p>
-                  <p className="text-sm text-neutral-500 mb-4 dark:text-neutral-400">
-                    Supervisor: {exp.supervisor}
-                  </p>
-                  <img
-                    src={exp.image}
-                    alt={exp.company}
-                    className="w-full h-32 object-cover rounded-lg mb-4"
-                  />
-                  <ul className="list-disc list-inside space-y-2 text-sm">
+                <CardContent className="space-y-4 p-6">
+                  <div className="space-y-2">
+                    <p className="font-medium text-lg">{exp.position}</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">Supervisor: {exp.supervisor}</p>
+                  </div>
+                  <ul className="space-y-2 text-sm list-disc list-inside">
                     {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx}>{resp}</li>
+                      <li key={idx} className="text-neutral-500 dark:text-neutral-400">
+                        <span className="text-neutral-950 dark:text-neutral-50">{resp}</span>
+                      </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
             </div>
-            {/* Timeline node */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-neutral-900 rounded-full dark:bg-neutral-50"></div>
           </motion.div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TimelineComponent;
+export default Timeline;

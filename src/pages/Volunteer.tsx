@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import VolunteerCarouselComponent from '@/components/volunteer-carousel';
+import { m } from 'framer-motion';
 
 // Carousel slides data
 const slides = [
@@ -14,14 +15,18 @@ const slides = [
   {
     title: "Narcan Training",
     description: "Conducting life-saving Narcan training sessions.",
-    imageUrl: "narcanTraining.jpg",
+    imageUrl: "NFLN.webp",
   },
   {
     title: "Community Outreach",
     description: "Engaging with the community to raise awareness.",
-    imageUrl: "communityOutreach.jpg",
+    imageUrl: "Supplies.png",
   },
-  // Add more slides as needed
+  {
+    title: "Awareness",
+    description: "Learning about the different ways to inform the community about Narcan and how it can save lives",
+    imageUrl: "SouthParkPresentation.png",
+  }
 ];
 
 const Volunteer: React.FC = () => {
@@ -66,9 +71,9 @@ const Volunteer: React.FC = () => {
             >
               Learn About NFLN
             </Link>
-            {/* External Link */}
+            {/* External Link to UConn Article */}
             <a
-              href="https://www.example.com/story" // Replace with the actual URL
+              href="https://today.uconn.edu/2016/02/pharmacists-working-to-combat-opioid-overdose/" // Updated URL
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300 transition duration-200"

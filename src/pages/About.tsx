@@ -29,10 +29,8 @@ const AboutPage: React.FC = () => {
               <h2 className="text-2xl font-semibold">Professional Summary</h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
-              A dedicated pharmacy professional with extensive experience across various healthcare settings, 
-              including roles at Takeda Pharmaceuticals, Hartford Hospital, and community pharmacies. 
-              Committed to improving patient care through innovative pharmaceutical practices and research.
-            </p>
+            A motivated PharmD candidate with hands-on experience across diverse healthcare settings, including clinical exposure at Hartford Hospital, an internship in Global Medical/Marketed Products Development at Takeda Pharmaceuticals, and practical community pharmacy experience. Eager to apply pharmaceutical knowledge and skills to drive patient-centered innovations within the pharmaceutical industry.
+          </p>
           </div>
 
           {/* Education */}

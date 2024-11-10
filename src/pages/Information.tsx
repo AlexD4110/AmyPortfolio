@@ -5,16 +5,15 @@ import TimelineComponent from '@/components/timeline'; // Adjust the import path
 
 const Information: React.FC = () => {
   return (
-    <CategoryPageTemplate
-      title="Professional Experience"
-      date="October 12, 2024"
-      author="Amy Nguyen"
-    >
+    
       <div className="max-w-4xl mx-auto py-8">
         <TimelineComponent />
       </div>
-    </CategoryPageTemplate>
+    
   );
 };
 
 export default Information;
+
+
+

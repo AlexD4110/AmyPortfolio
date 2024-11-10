@@ -16,13 +16,13 @@ const Contact: React.FC = () => {
       {/* Contact Icons Section */}
       <section className="flex space-x-12 mb-16">
         {/* LinkedIn */}
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-blue-600 hover:text-blue-800">
+        <a href="https://www.linkedin.com/in/amynguyensop/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-blue-600 hover:text-blue-800">
           <img src="/linkedin.svg" alt="LinkedIn Icon" className="h-12 w-12" /> {/* Updated to Favicon */}
           <span className="mt-2 font-semibold">LinkedIn</span>
         </a>
 
         {/* Email */}
-        <a href="mailto:your-email@example.com" className="flex flex-col items-center text-gray-800 hover:text-gray-600">
+        <a href="mailto:nhung.nguyen@uconn.edu" className="flex flex-col items-center text-gray-800 hover:text-gray-600">
           <img src="/mail.svg" alt="Email Icon" className="h-12 w-12" /> {/* Updated to Favicon */}
           <span className="mt-2 font-semibold">Email</span>
         </a>
