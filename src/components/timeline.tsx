@@ -137,7 +137,7 @@ function ImageCarousel({ images, company }: { images: string[], company: string 
 export function Timeline() {
   return (
     <div className="container mx-auto p-4 bg-white dark:bg-neutral-950">
-      <h2 className="text-3xl font-bold text-center mb-10">Professional Experience Timeline</h2>
+      <h2 className="text-3xl font-semibold text-center mb-10">Professional Experience Timeline</h2>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary to-primary-foreground h-full rounded-full" />
         {experiences.map((exp, index) => (
@@ -146,8 +146,7 @@ export function Timeline() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="relative grid grid-cols-[1fr,auto,1fr] gap-8 mb-16"
-          >
+            className="relative grid gap-8 mb-16 md:grid-cols-[1fr,auto,1fr]">
             <div className={`${index % 2 === 0 ? "block" : "order-3"} space-y-4`}>
               {index % 2 === 0 && <ImageCarousel images={exp.images} company={exp.company} />}
             </div>

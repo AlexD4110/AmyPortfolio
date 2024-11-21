@@ -66,7 +66,8 @@ const Volunteer: React.FC = () => {
             {/* Link to the Program */}
             <Link
               to="/nfln-program" // Ensure this route exists
-              className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-200"
+              className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition duration-200
+"
             >
               Learn About NFLN
             </Link>

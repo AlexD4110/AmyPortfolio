@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Github, Twitter, Linkedin } from 'lucide-react';
-import logo from '../assets/logo.jpeg'; // Adjust the path based on your file structure
+const logo = '/AN.svg';
 
 // Define types for navigation items
 interface NavItem {
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Border and Copyright */}
         <div className="mt-6 border-t border-gray-700 pt-4 text-center">
           <p className="text-xs text-gray-400">
-            &copy; 2024 Your Company Name. All rights reserved.
+            &copy; 2024 Amy Nguyen. All rights reserved.
           </p>
         </div>
       </div>

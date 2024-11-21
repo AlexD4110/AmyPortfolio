@@ -25,7 +25,7 @@ const AboutPage: React.FC = () => {
           {/* Professional Summary */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <Briefcase className="w-6 h-6 text-blue-600 mr-2" />
+              <Briefcase className="w-6 h-6 text-black-600 mr-2" />  
               <h2 className="text-2xl font-semibold">Professional Summary</h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
           {/* Education */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <GraduationCap className="w-6 h-6 text-blue-600 mr-2" />
+              <GraduationCap className="w-6 h-6 text-black-600 mr-2" />
               <h2 className="text-2xl font-semibold">Education</h2>
             </div>
             <div className="space-y-3">
@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => {
           {/* Research */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <LibraryBig className="w-6 h-6 text-blue-600 mr-2" />
+              <LibraryBig className="w-6 h-6 text-black-600 mr-2" />
               <h2 className="text-2xl font-semibold">Research Focus</h2>
             </div>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -69,7 +69,7 @@ const AboutPage: React.FC = () => {
           {/* Leadership */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="flex items-center mb-4">
-              <Users className="w-6 h-6 text-blue-600 mr-2" />
+              <Users className="w-6 h-6 text-black-600 mr-2" />
               <h2 className="text-2xl font-semibold">Leadership</h2>
             </div>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -84,7 +84,7 @@ const AboutPage: React.FC = () => {
         {/* Awards Section */}
         <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
           <div className="flex items-center mb-4">
-            <Award className="w-6 h-6 text-blue-600 mr-2" />
+            <Award className="w-6 h-6 text-black-600 mr-2" />
             <h2 className="text-2xl font-semibold">Awards & Recognition</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
