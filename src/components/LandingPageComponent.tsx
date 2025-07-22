@@ -94,16 +94,9 @@ const LandingPageComponent = () => {
             <div className="p-8 md:w-3/4">
               <h2 className="text-3xl font-normal mb-4">About Me</h2>
               <p className="text-lg mb-4">
-                I am a pharmacy student at the University of Connecticut,
-                pursuing a PharmD with a passion for patient care and
-                pharmaceutical innovation. My experiences range from community
-                pharmacy internships to global pharmaceutical development.
-              </p>
+                As a PharmD student at the University of Connecticut, my core drive is to significantly impact patient care through advancements in pharmacy. I'm especially drawn to pharmaceutical regulatory affairs, recognizing its vital role in bringing life-changing therapies to a broad patient population. The integration of Artificial Intelligence (AI) into drug development and the constant evolution of agency guidelines, such as those from the FDA on AI applications, are areas I follow with great interest, seeing their potential to dramatically improve efficiency and access. I thrive in collaborative environments, always eager to apply my growing knowledge to real-world challenges and contribute to the future of healthcare. </p>
               <p className="text-lg mb-6">
-                I am committed to enhancing healthcare through dedication,
-                continuous learning, and applying my skills in real-world
-                settings. I thrive in collaborative environments and am eager
-                to contribute to the future of pharmacy.
+              When I step away from my studies, I embrace a variety of interests that keep me curious and engaged. You might find me honing my skills at billiards, discovering unique flavors at a new restaurant, enjoying the quiet contemplation of a library, or experiencing the delight of a lucky find while thrifting and opening blind boxes.
               </p>
               <Button asChild variant="outline">
                 <Link to="/about">More About Me</Link>

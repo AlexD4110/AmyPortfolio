@@ -9,6 +9,22 @@ import { ArrowRight } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'Boehringer Ingelheim',
+    role: 'APPE Rotation',
+    duration: 'June 2025 - August 2025',
+    image: '/BI.png',
+    link: '/experience/boehringer',
+    location: 'Boehringer Ingeleheim US Headquarters',
+    manager: 'Manager: Roy Walton',
+    responsibilities: [
+      'Contributed to pharmaceutical research and development initiatives',
+      'Collaborated with cross-functional teams on patient-centered solutions',
+      'Supported clinical and regulatory activities',
+      'Participated in data analysis and reporting',
+      'Assisted with market research and competitive analysis',
+    ],
+  },
+  {
     title: 'Takeda Pharmaceuticals',
     role: 'Intern, Global Medical/Marketed Products Development',
     duration: 'May 2024 – August 2024',
@@ -89,7 +105,7 @@ const ExperiencePage: React.FC = () => {
                 />
               </div>
               <div className="p-8">
-                <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                <h1 className="text-2xl font-normal tracking-tight lg:text-5xl mb-4">
                   Professional Experience
                 </h1>
                 <p className="mt-4 max-w-2xl text-lg text-gray-500">

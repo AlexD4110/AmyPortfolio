@@ -1,3 +1,7 @@
+// tailwind.config.js
+
+import animate from "tailwindcss-animate"; // <-- ADD THIS AT THE TOP
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -8,7 +12,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        helvetica: ['Helvetica Neue Light', 'sans-serif'], // Custom font class
+        helvetica: ['Helvetica Neue Light', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -16,12 +20,11 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
-        
+        // you can add your custom colors here
       }
     }
   },
   plugins: [
-    require("tailwindcss-animate"),
-    
+    animate, // <-- THEN USE THIS
   ],
 };

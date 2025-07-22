@@ -22,7 +22,7 @@ const HartfordHospital: React.FC = () => {
         
         {/* Project Overview Section */}
         <section className="my-12 text-gray-800">
-          <h2 className="text-3xl font-semibold text-blue-700">Project Overview</h2>
+          <h2 className="text-3xl font-semibold text-black-700">Project Overview</h2>
           <p className="mt-4">
             As an intern at Hartford Hospital from April 2023 to July 2024, I expanded my expertise in managing patient profiles, medication charges, and unit dose cart preparation. Conducting inspections across patient care units taught me to uphold quality standards, while my work overseeing drug purchasing, receiving, and distribution gave me a thorough understanding of the pharmaceutical supply chain.
           </p>
@@ -37,10 +37,10 @@ const HartfordHospital: React.FC = () => {
 
         {/* Achievements Section */}
         <section className="bg-gray-200 py-12 px-6 rounded-lg shadow-md my-12">
-          <h2 className="text-3xl font-semibold text-blue-700 text-center">Key Achievements</h2>
+          <h2 className="text-3xl font-semibold text-black-700 text-center">Key Achievements</h2>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="achievement-item bg-white p-6 rounded-lg shadow-sm text-center">
-              <h3 className="text-xl font-semibold text-blue-600">Patient Care</h3>
+              <h3 className="text-xl font-semibold text-black-600">Patient Care</h3>
               <p className="mt-2 text-gray-700">Managed patient profiles and prepared unit dose carts.</p>
               <img 
                 src="/hartford-patient-care.jpg" 
@@ -49,7 +49,7 @@ const HartfordHospital: React.FC = () => {
               />
             </div>
             <div className="achievement-item bg-white p-6 rounded-lg shadow-sm text-center">
-              <h3 className="text-xl font-semibold text-blue-600">Quality Standards</h3>
+              <h3 className="text-xl font-semibold text-black-600">Quality Standards</h3>
               <p className="mt-2 text-gray-700">Conducted inspections to uphold quality standards.</p>
               <img 
                 src="/hartford-quality.jpg" 
@@ -58,7 +58,7 @@ const HartfordHospital: React.FC = () => {
               />
             </div>
             <div className="achievement-item bg-white p-6 rounded-lg shadow-sm text-center">
-              <h3 className="text-xl font-semibold text-blue-600">Supply Chain</h3>
+              <h3 className="text-xl font-semibold text-black-600">Supply Chain</h3>
               <p className="mt-2 text-gray-700">Oversaw drug purchasing, receiving, and distribution.</p>
               <img 
                 src="/hartford-supply-chain.jpg" 

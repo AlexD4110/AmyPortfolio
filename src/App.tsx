@@ -12,10 +12,12 @@ import TakedaInternship from './pages/experience/takeda';
 import MedicineShoppe from './pages/experience/medicine';
 import HartfordHospital from './pages/experience/hartford';
 import CVSPharmacy from './pages/experience/cvs';
+import BoehringerIngelheim from './pages/experience/boehringer';
 import Contact from './pages/Contact';
 import Leadership from './pages/Leadership';
 //import Presentations from './pages/Presentations';
 import NflnProgram from './pages/NflnProgram'; 
+import Boehringer from './pages/Boehringer';
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/PageTransition"
 import './App.css';
@@ -34,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/experience/medicine" element={<PageTransition><MedicineShoppe /></PageTransition>} />
         <Route path="/experience/hartford" element={<PageTransition><HartfordHospital /></PageTransition>} />
         <Route path="/experience/cvs" element={<PageTransition><CVSPharmacy /></PageTransition>} />
+        <Route path="/experience/boehringer" element={<PageTransition><BoehringerIngelheim /></PageTransition>} />
         <Route path="/information" element={<PageTransition><Information /></PageTransition>} />
         <Route path="/education" element={<PageTransition><Education /></PageTransition>} />
         <Route path="/certifications" element={<PageTransition><Certifications /></PageTransition>} />
@@ -41,6 +44,7 @@ const AppRoutes = () => {
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/leadership" element={<PageTransition><Leadership /></PageTransition>} />
         <Route path="/nfln-program" element={<PageTransition><NflnProgram /></PageTransition>} />
+        <Route path="/boehringer" element={<PageTransition><Boehringer /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
