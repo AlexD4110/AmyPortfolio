@@ -29,7 +29,7 @@ const experiences: Experience[] = [
       "Collaborated with the Center for Post Authorization Safety Studies and Clinical Science Teams, fostering cross-functional communication that reduced project turnaround times by 10%",
       "Compiled a detailed list of all prescription and OTC IBS-C/CIC drugs—including manufacturer, drug class, indication, regulatory status—enhancing the team's understanding competitive landscape"
     ],
-    images: ["/amy.png", "/dinner.webp", "/viewhigh.webp", "/boss.webp"]
+    images: ["/amy.webp", "/dinner.webp", "/viewhigh.webp", "/boss.webp"]
   },
   {
     company: "The Medicine Shoppe",

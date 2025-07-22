@@ -94,14 +94,14 @@ export const Footer: React.FC = () => {
               <span className="ml-2 text-gray-400 text-sm"></span>
             </Link>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <button className="text-gray-400 hover:text-white cursor-not-allowed" disabled>
                 <span className="sr-only">Twitter</span>
                 <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              </button>
+              <button className="text-gray-400 hover:text-white cursor-not-allowed" disabled>
                 <span className="sr-only">GitHub</span>
                 <Github className="h-5 w-5" />
-              </a>
+              </button>
               <a href="https://www.linkedin.com/in/amynguyensop/" className="text-gray-400 hover:text-white">
                 <span className="sr-only">LinkedIn</span>
                 <Linkedin className="h-5 w-5" />
@@ -130,14 +130,14 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-base text-gray-400 hover:text-white">
+                <button className="text-base text-gray-400 hover:text-white cursor-not-allowed" disabled>
                   Privacy Policy
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-base text-gray-400 hover:text-white">
+                <button className="text-base text-gray-400 hover:text-white cursor-not-allowed" disabled>
                   Terms of Service
-                </a>
+                </button>
               </li>
             </ul>
           </div>

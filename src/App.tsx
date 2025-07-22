@@ -2,22 +2,22 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Navbar, Footer } from './components/layout-components';
 import HomePage from './pages/HomePage';
-import About from './pages/About';
-import ExperiencePage from './pages/ExperiencePage';
-import Information from './pages/Information';
-import Education from './pages/Education';
-import Certifications from './pages/Certifications';
-import Volunteer from './pages/Volunteer';
-import TakedaInternship from './pages/experience/takeda';
-import MedicineShoppe from './pages/experience/medicine';
-import HartfordHospital from './pages/experience/hartford';
-import CVSPharmacy from './pages/experience/cvs';
-import BoehringerIngelheim from './pages/experience/boehringer';
-import Contact from './pages/Contact';
-import Leadership from './pages/Leadership';
-//import Presentations from './pages/Presentations';
-import NflnProgram from './pages/NflnProgram'; 
-import Boehringer from './pages/Boehringer';
+// Lazy load other pages for better performance
+const About = React.lazy(() => import('./pages/About'));
+const ExperiencePage = React.lazy(() => import('./pages/ExperiencePage'));
+const Information = React.lazy(() => import('./pages/Information'));
+const Education = React.lazy(() => import('./pages/Education'));
+const Certifications = React.lazy(() => import('./pages/Certifications'));
+const Volunteer = React.lazy(() => import('./pages/Volunteer'));
+const TakedaInternship = React.lazy(() => import('./pages/experience/takeda'));
+const MedicineShoppe = React.lazy(() => import('./pages/experience/medicine'));
+const HartfordHospital = React.lazy(() => import('./pages/experience/hartford'));
+const CVSPharmacy = React.lazy(() => import('./pages/experience/cvs'));
+const BoehringerIngelheim = React.lazy(() => import('./pages/experience/boehringer'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const Leadership = React.lazy(() => import('./pages/Leadership'));
+const NflnProgram = React.lazy(() => import('./pages/NflnProgram'));
+const Boehringer = React.lazy(() => import('./pages/Boehringer'));
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/PageTransition"
 import './App.css';
@@ -55,7 +55,9 @@ const App: React.FC = () => (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <AppRoutes />
+        <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+          <AppRoutes />
+        </React.Suspense>
       </main>
       <Footer />
     </div>

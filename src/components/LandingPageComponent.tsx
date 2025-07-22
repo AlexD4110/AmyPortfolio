@@ -87,8 +87,9 @@ const LandingPageComponent = () => {
             <div className="md:w-1/4 h-full">
               <img
                 className="w-full h-full object-cover object-center"
-                src="/amy.png" // Correct path for public folder
+                src="/amy.webp"
                 alt="Amy Nguyen"
+                loading="lazy"
               />
             </div>
             <div className="p-8 md:w-3/4">
